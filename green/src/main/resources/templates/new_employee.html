@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>New Employee | Capture</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
+</head>
+<body>
+	<form action="#" th:action="@{/new_employee}" th:object="${employee}" method="post">
+		<div class="container-fluid">
+			<div class="col-md-6">
+				<table class="table table-condensed">
+					<tr>
+						<td>First Name</td>
+						<td><input type="text" class="form-control" th:field="*{firstName}"></td>
+						<td>Last Name</td>
+						<td><input type="text" class="form-control" th:field="*{lastName}"></td>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td><input type="text" class="form-control" th:field="*{age}"></td>
+						<td>Email</td>
+						<td><input type="text" class="form-control" th:field="*{email}"></td>
+					</tr>
+					<tr>
+						<td>Department</td>
+						<td><input type="text" class="form-control" th:field="*{department}"></td>
+						<td>Years of Service</td>
+						<td><input type="text" class="form-control" th:field="*{yearOfSservice}"></td>
+					</tr>
+				</table>
+				<button type="submit" class="btn btn-default">Create Employee</button>
+			</div>
+		</div>
+		
+	</form>
+	<script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
+</body>
+</html>

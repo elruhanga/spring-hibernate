@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>All Employees | Display</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
+</head>
+<body>
+<table>
+	<tr th:each="employee: ${employees}">
+	    <td th:text="${employee.id}" />
+	    <td th:text="${employee.firstName}" />
+	</tr>
+</table>
+<script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
+</body>
+</html>
