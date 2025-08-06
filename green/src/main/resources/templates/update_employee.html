@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Update Employee | Capture</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
+</head>
+<body>
+	<div class="container">
+		<h3>Update Employee</h3>
+		<hr>
+		<form action="#" th:action="@{/save}" th:object="${employee}" method="post">
+			<input type="hidden" th:field="*{id}" />
+			<input type="text" th:field="*{firstName}" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{lastName}" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{age}" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{email}" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{department}" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{yearOfService}" class="form-control mb-4 col-4">
+			<button type="submit" class="btn btn-info col-2">Update Employee</button>
+		</form>
+		<hr>
+		<a th:href="@{/all_employee}">Back to Employee List</a>
+	</div>
+	<script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
+</body>
+</html>

@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.green.model.Employee;
 
+import java.util.List;
+
 public interface EmployeeService extends JpaRepository<Employee, Integer> {
-	Employee findByFirstName();
+	List<Employee> findByFirstName(String firstName);
 }

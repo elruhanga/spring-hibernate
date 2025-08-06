@@ -25,7 +25,7 @@ public class Employee {
 	@Column(name = "department")
 	private String department;
 	@Column(name = "years_of_service")
-	private float yearOfSservice;
+	private float yearOfService;
 	public Integer getId() {
 		return id;
 	}
@@ -62,16 +62,16 @@ public class Employee {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	public float getYearOfSservice() {
-		return yearOfSservice;
+	public float getYearOfService() {
+		return yearOfService;
 	}
-	public void setYearOfSservice(float yearOfSservice) {
-		this.yearOfSservice = yearOfSservice;
+	public void setYearOfService(float yearOfService) {
+		this.yearOfService = yearOfService;
 	}
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age
-				+ ", email=" + email + ", department=" + department + ", yearOfSservice=" + yearOfSservice + "]";
+				+ ", email=" + email + ", department=" + department + ", yearOfService=" + yearOfService + "]";
 	}
 	
 	

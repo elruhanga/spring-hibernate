@@ -6,12 +6,42 @@
 <link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
 </head>
 <body>
-<table>
-	<tr th:each="employee: ${employees}">
-	    <td th:text="${employee.id}" />
-	    <td th:text="${employee.firstName}" />
-	</tr>
-</table>
-<script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
+	<div class="container">
+		<h3>Employee List</h3>
+		<hr />
+		<form th:action="@{/search}" method="get">
+			<input type="text" name="keyword" th:value="${keyword}" placeholder="Find by first name" size="50">
+			<button type="submit" class="btn btn-info">Search</button>
+		</form>
+		<br>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Age</th>
+					<th>Email</th>
+					<th>Department</th>
+					<th>Years of Service</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee : ${employees}">
+					<td th:text="${employee.firstName}" />
+					<td th:text="${employee.lastName}" />
+					<td th:text="${employee.age}" />
+					<td th:text="${employee.email}" />
+					<td th:text="${employee.department}" />
+					<td th:text="${employee.yearOfService}" />
+					<td>
+						<a th:href="@{/showUpdateForm/{id}(id=${employee.id})}" class="btn btn-primary">Update</a>
+						<a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
 </body>
 </html>
